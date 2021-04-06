@@ -1,11 +1,18 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
+import dash_auth as auth
 import pandas as pd
 import plotly.graph_objs as go
 from dash.dependencies import Input, Output
 
-app = dash.Dash()
+
+VALID_USERNAME_PASSWORD_PAIRS = [
+    ['hello', 'world']
+]
+
+app = dash.Dash('auth')
+auth.BasicAuth(app, VALID_USERNAME_PASSWORD_PAIRS)
 
 markdown_text = '''
 ### Dash and Markdown
