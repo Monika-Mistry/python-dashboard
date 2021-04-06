@@ -11,7 +11,7 @@ VALID_USERNAME_PASSWORD_PAIRS = [
     ['hello', 'world']
 ]
 
-app = dash.Dash('auth')
+app = dash.Dash()
 auth.BasicAuth(app, VALID_USERNAME_PASSWORD_PAIRS)
 
 markdown_text = '''
